@@ -1,9 +1,9 @@
 <div class="row text-center">
   <h2>All Blogs</h2>
 </div>
-<div class="row">
+<div class="row" *ngIf = "allBlogs.length > 0">
   <div class="col-md-4" *ngFor="let blog of allBlogs">
-    <div class="panel panel-default" style=" width : 90%; margin: 0 auto; margin-top : 20px; ">
+    <div class="panel panel-default" style=" width : 90%; margin: 20px auto; ">
       <div>
         <div class="panel-heading">
           <h2 class="panel-title">{{blog.title | uppercase}}</h2>

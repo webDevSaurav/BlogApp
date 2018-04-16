@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 text-center">
       <h3>{{currentBlog.title | uppercase}}</h3>
-      <p *ngIf="currentBlog.tags.length != undefined && currentBlog.tags.length > 0">
+      <p *ngIf="currentBlog.tags != undefined && currentBlog.tags.length > 0">
         <span>{{currentBlog.tags.length > 1 ? "Tags : " : "Tag : " }}</span>
         <span *ngFor="let tag of currentBlog.tags ; let last = last">
           <span>{{ last ? tag : tag + ","  }}</span>
@@ -20,13 +20,13 @@
   </div>
   <div class="row text-center" style="margin-top : 20px;">
     <div class="col-md-4">
-      <button class="btn btn-primary">Edit</button>
+      <button class="btn btn-primary" (click) = "editBlog()">Edit</button>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-danger" (click) = "deleteBlog()">Delete</button>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-primary">Go Back</button>
+      <button class="btn btn-primary" (click) = "goBack()">Go Back</button>
     </div>
   </div>
 </div>
